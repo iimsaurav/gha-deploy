@@ -5,7 +5,11 @@ The code in this repository demonstrates how to deploy updates to the main branc
 * Push your changes to GitHub
 * See your latest app code automatically redeployed to Snowflake
 
+### Deployment sucess
 <img width="1197" alt="image" src="https://github.com/sfc-gh-zblackwood/gha-deploy/assets/102999810/d53ad526-8603-485d-b763-abb62dcee50f">
+
+### Deployed app
+<img width="1986" alt="image" src="https://github.com/sfc-gh-zblackwood/gha-deploy/assets/102999810/acb6817a-0511-47f8-a0dc-0b9cbf17ac2b">
 
 This CI/CD setup is useful for several reasons. Firstly, it allows you to use your favorite editor for development, providing a familiar and efficient coding experience. Additionally, you can work with as many files as you need, enabling you to organize your codebase in a way that makes sense for your project. Lastly, you can create multiple pages in your app, providing a seamless and interactive user experience.
 
