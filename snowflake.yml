@@ -7,6 +7,6 @@ streamlit:
   database: streamlit_apps
   schema: public
   role: accountadmin
-  #pages_dir: pages/
-  #additional_source_files:
-  #  - common/*.py
+  pages_dir: pages/
+  additional_source_files:
+    - common/*.py
