@@ -32,9 +32,9 @@ jobs:
       # Get the database and schema from the snowflake.yml file and save them to the environment
       - name: Set environment variables
         run: |
-          export DATABASE=$(yq eval '.snowflake.database' snowflake.yml)
-          export SCHEMA=$(yq eval '.snowflake.schema' snowflake.yml)
-          export ROLE=$(yq eval '.snowflake.role' snowflake.yml)
+          export DATABASE=$(yq -e eval '.streamlit.database' snowflake.yml)
+          export SCHEMA=$(yq -e eval '.streamlit.schema' snowflake.yml)
+          export ROLE=$(yq -e eval '.streamlit.role' snowflake.yml)
           echo "DATABASE=$DATABASE" >> $GITHUB_ENV
           echo "SCHEMA=$SCHEMA" >> $GITHUB_ENV
           echo "ROLE=$ROLE" >> $GITHUB_ENV
