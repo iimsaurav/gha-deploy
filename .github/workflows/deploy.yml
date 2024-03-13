@@ -41,6 +41,10 @@ jobs:
 
       # Configure the Snowflake CLI with necessary credentials and settings
       - name: Create snowcli config
+        env:
+          SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+          SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
+          SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
         run: |
           mkdir -p ~/.snowflake
           cat << EOF > ~/.snowflake/config.toml
@@ -54,6 +58,7 @@ jobs:
           role = "$ROLE"
           EOF
           chmod 0600 ~/.snowflake/config.toml
+          cat ~/.snowflake/config.toml
 
       # Deploy the Streamlit app using the Snowflake CLI
       - name: Deploy the streamlit app
