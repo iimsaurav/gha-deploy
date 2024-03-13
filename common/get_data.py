@@ -8,7 +8,7 @@ from snowflake.snowpark.functions import col, date_trunc
 
 from common.utils import get_pandas_df, get_table
 
-TABLE_NAME = "SAMPLE.PUBLIC.EVENT_DATA"
+TABLE_NAME = "SAMPLE_DATA.PUBLIC.EVENT_DATA"
 
 
 def get_events(table_name: str = TABLE_NAME) -> sp.DataFrame:
