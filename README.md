@@ -9,6 +9,8 @@ This CI/CD setup is useful for several reasons. Firstly, it allows you to use yo
 
 To see the automatic deployment, check out the [Actions Page](/actions)
 
+To see how the deployment works, check out [.github/workflows/deploy.yml](/blob/main/.github/workflows/deploy.yml)
+
 # Prerequisites
 
 ## GitHub Secrets
