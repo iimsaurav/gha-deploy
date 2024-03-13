@@ -14,7 +14,11 @@ import streamlit as st
 from plotly.graph_objs._figure import Figure
 from snowflake.snowpark import Column, DataFrame, Session, Table
 from snowflake.snowpark.context import get_active_session
-from snowflake.snowpark.exceptions import SnowparkSessionException, SnowparkSQLException
+from snowflake.snowpark.exceptions import (
+    SnowparkFetchDataException,
+    SnowparkSessionException,
+    SnowparkSQLException,
+)
 from streamlit.runtime.scriptrunner import get_script_run_ctx
 
 
@@ -154,7 +158,7 @@ def get_pandas_df(
 
     try:
         pd_df = _get_df(_df=df, queries_str=filtered)
-    except SnowparkSQLException:
+    except (SnowparkSQLException, SnowparkFetchDataException):
         st.expander("Show the SQL query that caused the error").code(
             format_sql_from_df(df),
             language="sql",

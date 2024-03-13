@@ -24,7 +24,7 @@ with col1:
     st.write("## Overall Usage")
 
     events_per_day = events.group_by("day").agg(
-        count_distinct("event_id").alias("events"),
+        count_distinct("event_id").alias("events")
     )
 
     events_per_week = events.group_by("week").agg(
