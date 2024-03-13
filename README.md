@@ -13,7 +13,7 @@ The code in this repository demonstrates how to deploy updates to the main branc
 
 This CI/CD setup is useful for several reasons. Firstly, it allows you to use your favorite editor for development, providing a familiar and efficient coding experience. Additionally, you can work with as many files as you need, enabling you to organize your codebase in a way that makes sense for your project. Lastly, you can create multiple pages in your app, providing a seamless and interactive user experience.
 
-To see the automatic deployment, check out the [Actions Page](/actions)
+To see the automatic deployment, check out the [Actions Page](https://github.com/sfc-gh-zblackwood/gha-deploy/actions)
 
 To see how the deployment works, check out [.github/workflows/deploy.yml](.github/workflows/deploy.yml)
 
