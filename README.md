@@ -9,7 +9,7 @@ This CI/CD setup is useful for several reasons. Firstly, it allows you to use yo
 
 To see the automatic deployment, check out the [Actions Page](/actions)
 
-To see how the deployment works, check out [.github/workflows/deploy.yml](/blob/main/.github/workflows/deploy.yml)
+To see how the deployment works, check out [.github/workflows/deploy.yml](.github/workflows/deploy.yml)
 
 # Prerequisites
 
@@ -48,5 +48,5 @@ password = "<PASSWORD>"
 
 ## Sample Data (if using this exact app code)
 
-For this example to work, upload [event_data.csv](/blob/main/event_data.csv) to a table, and change
+For this example to work, upload [event_data.csv](event_data.csv) to a table, and change
 `TABLE_NAME` in `common/get_data.py` to be the full path of the uploaded data.
