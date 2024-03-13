@@ -16,7 +16,7 @@ st.session_state["customers"] = st.session_state.get("customers", [])
 st.set_page_config(page_title="App Performance", page_icon="📈", layout="wide")
 st.write("# 📈 App Performance ")
 
-events = get_events("SAMPLE.PUBLIC.EVENT_DATA")
+events = get_events()
 
 col1, col2 = st.columns(2)
 

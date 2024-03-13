@@ -8,8 +8,10 @@ from snowflake.snowpark.functions import col, date_trunc
 
 from common.utils import get_pandas_df, get_table
 
+TABLE_NAME = "SAMPLE.PUBLIC.EVENT_DATA"
 
-def get_events(table_name: str) -> sp.DataFrame:
+
+def get_events(table_name: str = TABLE_NAME) -> sp.DataFrame:
     customers = get_pandas_df(
         get_table(table_name).select("customer").distinct(), lowercase_columns=True
     )
