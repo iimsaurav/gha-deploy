@@ -28,7 +28,7 @@ In GitHub, go to
 
 Then add the following as secrets
 
-* `SNOWFLAKE_ACCOUNT`
+* `SNOWFLAKE_ACCOUNT` (e.g. `cq90989.us-east-2.aws`)
 * `SNOWFLAKE_USER`
 * `SNOWFLAKE_PASSWORD`
 
@@ -40,7 +40,7 @@ Create a file called .streamlit/secrets.toml that looks something like
 
 ```toml
 [connections.snowflake]
-account = "<ACCOUNT>"
+account = "<ACCOUNT>" # e.g. "cq90989.us-east-2.aws"
 user = "<USER>"
 authenticator = "externalbrowser"
 ```
