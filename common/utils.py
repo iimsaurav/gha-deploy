@@ -22,11 +22,14 @@ from snowflake.snowpark.exceptions import (
 from streamlit.runtime.scriptrunner import get_script_run_ctx
 
 
-def _deep_get(dictionary, keys, default={}):
+def _deep_get(dictionary, keys, default=None):
     """
     deep_get can can iterate through nested dictionaries, used to get credentials in the
     case of a multi-level secrets.toml hierarchy
     """
+    if default is None:
+        default = {}
+
     return reduce(
         lambda d, key: d.get(key, default) if isinstance(d, Mapping) else default,
         keys.split("."),
