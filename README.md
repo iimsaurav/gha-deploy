@@ -65,3 +65,24 @@ For this example to work, upload [event_data.csv](event_data.csv) to a table (ht
 
 <img width="1277" alt="image" src="https://github.com/sfc-gh-zblackwood/gha-deploy/assets/102999810/5750620e-d6bd-4b68-ad1f-6df96e801bd1">
 
+## What's in this repo?
+
+* [.github/workflows/deploy.yml](.github/workflows/deploy.yml) -- defines the GitHub Action that deploys the app whenever new code is pushed to `main`
+* `common/`
+    * [get_data.py](common/get_data.py) -- utility methods specific to this app which pulls "event data" from Snowflake and returns it as a Pandas DataFrame
+    * [utils.py](common/utils.py) -- contains several useful functions for creating streamlit-in-snowflake apps
+        * `SnowparkConnection().connect()` returns a snowpark Session which works locally and in snowflake
+        * `get_data_frame_from_raw_sql(sql)` takes a SQL string, returns a pandas DataFrame, and caches the results
+        * `get_pandas_df(pdf)` takes a SnowPark DataFrame and returns a pandas DataFrame, and caches the results
+        * `get_table(table_name)` takes a table name and returns a SnowPark DataFrame referencing that table, and caches the results
+        * `join_cached(df1, df2)` performs a cached join operation on two SnowPark DataFrames.
+        * `format_sql(sql)` formats a given SQL string for readability. It returns a formatted SQL string with proper indentation and lowercase keywords.
+        * `format_sql_from_df(df)` generates and formats a SQL query based on a SnowPark DataFrame. It returns a formatted SQL string that represents the query used to create the DataFrame.
+        * `tile_ctx(...)` is a context manager for creating a "tile" in a Streamlit app, which includes a chart, a dataframe preview, the SQL query, a description, and an optional download button for the data.
+        * `tile(df, description, chart, sql)` creates a tile in a Streamlit app with a chart, a dataframe preview, the SQL query, and a description. It's a simplified interface to `tile_ctx`.
+        * `altair_time_series(data, x, y, x_title, y_title)` creates a time series chart using Altair, based on a pandas DataFrame. It takes column names for the x and y axes, titles for these axes, and optional formatting arguments for the y-axis.
+* [streamlit_app.py](streamlit_app.py) -- defines the main page of the app
+* `pages/`
+    * [users.py](pages/users.py) -- defines the second page of the app
+* [environment.yml](environment.yml) -- defines the packages that will be used locally and when deployed to run your app
+* [snowflake.yml](snowflake.yml) -- specifies the properties of the app, including the name, schema and database of the app, which files should be included when the app is deployed, and what warehouse should be used when the app is running

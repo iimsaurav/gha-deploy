@@ -11,10 +11,10 @@ from common.utils import (
     tile,
 )
 
-st.session_state["customers"] = st.session_state.get("customers", [])
-
 st.set_page_config(page_title="App Performance", page_icon="📈", layout="wide")
 st.write("# 📈 App Performance ")
+
+st.session_state["customers"] = st.session_state.get("customers", [])
 
 events = get_events()
 
