@@ -12,7 +12,7 @@ from common.utils import (
 )
 
 st.set_page_config(page_title="App Performance", page_icon="📈", layout="wide")
-st.write("# 📈 App Performance ")
+st.write("# 📈 App Performance :rocket: ")
 
 st.session_state["customers"] = st.session_state.get("customers", [])
 
