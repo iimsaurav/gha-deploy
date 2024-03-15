@@ -11,7 +11,10 @@ The code in this repository demonstrates how to deploy updates to the main branc
 ### Deployed app
 <img width="1986" alt="image" src="https://github.com/sfc-gh-zblackwood/gha-deploy/assets/102999810/acb6817a-0511-47f8-a0dc-0b9cbf17ac2b">
 
-This CI/CD setup is useful for several reasons. Firstly, it allows you to use your favorite editor for development, providing a familiar and efficient coding experience. Additionally, you can work with as many files as you need, enabling you to organize your codebase in a way that makes sense for your project. Lastly, you can create multiple pages in your app, providing a seamless and interactive user experience.
+This setup is useful for several reasons:
+* Use your favorite editor and view your app running locally before deploying
+* You can refactor your code into multiple files, rather than being stuck with a single file (including making a multipage app)
+* Your deployed app will always be kept up-to-date without any manual steps on your end -- just commit, push and watch it get updated.
 
 To see the automatic deployment, check out the [Actions Page](https://github.com/sfc-gh-zblackwood/gha-deploy/actions)
 
