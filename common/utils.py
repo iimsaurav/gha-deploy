@@ -22,7 +22,7 @@ from snowflake.snowpark.exceptions import (
 from streamlit.runtime.scriptrunner import get_script_run_ctx
 
 
-def deep_get(dictionary, keys, default={}):
+def _deep_get(dictionary, keys, default={}):
     """
     deep_get can can iterate through nested dictionaries, used to get credentials in the
     case of a multi-level secrets.toml hierarchy
@@ -59,7 +59,7 @@ class SnowparkConnection:
             session_state = {} if ctx is None else st.session_state
 
             if "snowpark_session" not in session_state:
-                creds = deep_get(st.secrets, self.connection_name)
+                creds = _deep_get(st.secrets, self.connection_name)
 
                 if not creds:
                     st.exception(
